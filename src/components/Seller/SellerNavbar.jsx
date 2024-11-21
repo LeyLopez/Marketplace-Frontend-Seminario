@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { NavbarContext } from '../context/NavbarContext';
+// import { NavbarContext } from '../context/NavbarContext';
 import { NavLink } from 'react-router-dom';
 
 
 export const SellerNavbar = () => {
 
-    const {setNavbarType} = useContext(NavbarContext);
+    // const {setNavbarType} = useContext(NavbarContext);
 
   return (
     <div>
@@ -33,7 +33,6 @@ export const SellerNavbar = () => {
               <li>
                 <NavLink to="/addproduct" className="nav-link px-2">
                 <button class="btn btn-dark">Agregar producto</button>
-                  
                 </NavLink>
               </li>
               <li>

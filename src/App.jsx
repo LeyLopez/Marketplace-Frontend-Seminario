@@ -8,6 +8,7 @@ import { Home } from './pages/Home'
 import { ShoppingBag } from '@mui/icons-material'
 import { ShoppingCart } from './pages/ShoppingCart'
 import { Orders } from './pages/Orders'
+import { FormAddProduct } from './components/Seller/FormAddProduct'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/cart' element={<ShoppingCart></ShoppingCart>}></Route>
         <Route path='/orders' element={<Orders></Orders>}></Route>
+        <Route path='/addproduct' element={<FormAddProduct/>}></Route>
 
       </Routes>
     </BrowserRouter>

@@ -1,0 +1,22 @@
+.ContainerProducts{
+    margin: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+
+.divProduct{
+    height: 100%;
+}
+
+#formAddProduct{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+#formAddProduct button{
+    width: 100%;
+    
+}
