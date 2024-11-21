@@ -1,10 +1,20 @@
-import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+
+import { NavLink, useNavigate } from "react-router-dom";
 import { Badge } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
 
 
 export const ClientNavbar = () => {
+
+  const navigate = useNavigate();
+
+  const onResetPassword = () => {
+    navigate("/recoverpassword");
+  }
+
+  const onDeleteAccount = () => {
+    navigate('/deleteaccount');
+  }
 
 
 
@@ -24,7 +34,7 @@ export const ClientNavbar = () => {
                 aria-label="Search"
               />
             </form>
-            <NavLink to="/cart" className="nav-link px-2">
+            <NavLink to="/shoppingcart" className="nav-link px-2">
               <Badge badgeContent={4} color="primary">
                 <ShoppingCart color="action" />
               </Badge>
@@ -43,7 +53,7 @@ export const ClientNavbar = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item dropdown">
-                  <NavLink className="nav-link px-2">
+                  <div className="nav-link px-2">
                     <button
                       className="btn btn-dark dropdown-toggle"
                       data-bs-toggle="dropdown"
@@ -53,22 +63,17 @@ export const ClientNavbar = () => {
                     </button>
                     <ul className="dropdown-menu dropdown-menu-dark">
                       <li>
-                        <button className="dropdown-item">
+                        <button className="dropdown-item" onClick={onResetPassword}>
                           Cambiar contraseña
                         </button>
                       </li>
                       <li>
-                        <button className="dropdown-item">
+                        <button className="dropdown-item" onClick={onDeleteAccount}>
                           Eliminar cuenta
                         </button>
                       </li>
-                      <li>
-                        <button className="dropdown-item">
-                          Otro
-                        </button>
-                      </li>
                     </ul>
-                  </NavLink>
+                  </div>
                 </li>
               </ul>
             </ul>

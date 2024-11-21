@@ -1,11 +1,10 @@
-import { ClientNavbar } from "../components/Cliente/ClientNavar"
-
+import { ClientNavbar } from "../components/Cliente/ClientNavbar";
 
 export const Home = () => {
   return (
     <>
-        <ClientNavbar></ClientNavbar>
-        
+      <ClientNavbar></ClientNavbar>
+      <h1>Home</h1>
     </>
-  )
-}
+  );
+};

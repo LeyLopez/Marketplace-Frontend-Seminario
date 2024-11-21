@@ -1,13 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import { Header } from './components/Header'
 import { Login } from './pages/Login'
 import { Signup } from './pages/Signup'
 import { RecoverPassword } from './pages/RecoverPassword'
 import { Home } from './pages/Home'
-import { ShoppingBag } from '@mui/icons-material'
 import { ShoppingCart } from './pages/ShoppingCart'
 import { Orders } from './pages/Orders'
+import { DeleteAccount } from './pages/DeleteAccount'
 
 function App() {
 
@@ -20,12 +19,12 @@ function App() {
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/recoverpassword' element={<RecoverPassword></RecoverPassword>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/cart' element={<ShoppingCart></ShoppingCart>}></Route>
+        <Route path='/shoppingcart' element={<ShoppingCart></ShoppingCart>}></Route>
         <Route path='/orders' element={<Orders></Orders>}></Route>
-
+        <Route path="/deleteaccount" element={<DeleteAccount></DeleteAccount>}></Route>
       </Routes>
     </BrowserRouter>
   )
 }
 
-export default App
+export default App;
