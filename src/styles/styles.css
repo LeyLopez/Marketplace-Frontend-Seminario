@@ -1,0 +1,173 @@
+.navbar{
+    width: 100%;
+    height: 6em;
+    left: 0px;
+    top: 0px;
+    background-color: #5242CF;
+}
+.navbar h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    color: white;
+}
+
+.log-sig{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 0.5em;
+
+    left: 12em;
+    top: 5em;
+}
+
+.button{
+    background-color: #5242CF;
+    color: white;
+    margin-top: 0.5em;
+    border: 0.01em solid #7a75a1;
+    padding: 0.5em 1em;
+    width: 100%;
+    
+    height: 2.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    grid: 1em;
+
+}
+
+.form-container{
+    margin-left: 40em;
+    margin-right: 40em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 3em; 
+}
+
+.form-container input{
+    width: 100%;
+    height: 2.5em;
+    border-radius: 0.5em;
+    border: 0.01em solid #7a75a1;
+    padding: 0.5em;
+    margin: auto;
+}
+
+.btn-login{
+    background-color: #5242CF;
+    color: white;
+    border: 0.01em solid #7a75a1;
+    width: 100%;
+    
+    height: 2.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin: auto;
+}
+
+/* .form-container h2{
+    font-size: 1.5em;   
+    font-family: Georgia;
+} */
+
+.form-register{
+    padding-top: 3em;
+    margin-left: 20em;
+    margin-right: 20em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    
+}
+
+.form-register_divs{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: center;
+
+}
+
+.form-register_divs input{
+    width: 100%;
+    height: 2.5em;
+    border-radius: 0.5em;
+    border: 0.01em solid #7a75a1;
+    padding: auto;
+
+}
+
+
+.container-btn-register{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 1em;
+}
+
+.button-register{
+    background-color: #5242CF;
+    color: white;
+    border: 0.01em solid #7a75a1;
+    width: 20%;
+
+    
+    height: 2.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin-top: 1em;
+
+}
+
+
+
+.form-forgot-password{
+    margin-left: 20em;
+    margin-right: 20em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 3em;   
+    
+}
+
+.form-forgot-password label{
+    margin-left: 20em;
+}
+
+
+
+.form-forgot-password_div{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    padding: auto;
+    margin-top: 1em;
+}
+
+.form-forgot-password Input{
+    width: 30%;
+    height: 2.5em;
+    border-radius: 0.5em;
+    border: 0.01em solid #7a75a1;
+    padding: 0.5em;
+    margin: auto;
+}   
+
+.btn-forgot-password{
+    background-color: #5242CF;
+    color: white;
+    border: 0.01em solid #7a75a1;
+    width: 20%;
+    
+    height: 2.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin-top: 1em;
+    margin: auto;
+}
+
+

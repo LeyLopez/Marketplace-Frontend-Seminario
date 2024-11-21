@@ -1,11 +1,7 @@
-import { ClientNavbar } from "../components/Cliente/ClientNavar"
-
+import React from 'react'
 
 export const Home = () => {
   return (
-    <>
-        <ClientNavbar></ClientNavbar>
-        
-    </>
+    <div>Home</div>
   )
 }

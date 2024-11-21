@@ -1,5 +1,5 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 export const RecoverPassword = () => {
   return (
@@ -27,4 +27,4 @@ export const RecoverPassword = () => {
       </div>
     </div>
   );
-}
+};
