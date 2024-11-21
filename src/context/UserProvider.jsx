@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
     email: "",
     password: "",
     phone: "",
-    rol: "",
+    rol: "Client"
   });
 
   const userService = UserServices();

@@ -116,6 +116,7 @@ export function Products() {
               <h5 className="card-title">{`${product.name} : ${product.price}`}</h5>
               <p className="card-text">{product.description}</p>
             </div>
+<<<<<<< HEAD
             {rol && "seller"
               ? () => {
                   <div className="div">
@@ -137,6 +138,28 @@ export function Products() {
                   </div>;
                 }
               : () => {
+=======
+            {rol == "seller"
+              ? (
+                <div className="div" style={{ alignSelf: "center", marginBottom: "15px" }}>
+                  <a
+                    href="#"
+                    className="btn btn-warning"
+                    style={{ margin: "5px" }}
+                  >
+                    Editar
+                  </a>
+                  <a
+                    href="hola"
+                    className="btn btn-danger"
+                    style={{ margin: "5px" }}
+                  >
+                    Eliminar
+                  </a>
+                </div>)
+               
+              : (
+>>>>>>> 39b5c5a874ee5648ff453d3b902fe6333c35d30c
                   <a
                     href="#"
                     className="btn btn-primary"
@@ -144,8 +167,8 @@ export function Products() {
                     onClick={()=> handleAddToCart(product)}
                   >
                     Add to card
-                  </a>;
-                }}
+                  </a>
+                )}
           </div>
         </div>
       ))}

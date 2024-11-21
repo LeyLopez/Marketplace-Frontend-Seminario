@@ -45,7 +45,6 @@ export const Login = () => {
 
   return (
     <>
-      <Header></Header>
       <div className="container">
         <div className="d-flex justify-content-center pt-5">
           <div className="col-md-3">
