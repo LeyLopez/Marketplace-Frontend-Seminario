@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "../../assets/css/styles.css";
+import { ShoppingCartContext, ShoppingCartProvider } from "../../context/ShoppingCartProvider";
 export function Products() {
   // Crear una lista de productos con datos en bruto
   const products = [
@@ -84,6 +85,12 @@ export function Products() {
 
   const [rol, setRol] = useState("seller");
 
+  const {addProdcut} = useContext(ShoppingCartContext);
+
+  const handleAddToCart = (product) => {
+    addProdcut(product);
+  }
+
   return (
     <div className="ContainerProducts">
       {products.map((product) => (
@@ -116,6 +123,7 @@ export function Products() {
                       href="#"
                       className="btn btn-primary"
                       style={{ alignSelf: "center", marginBottom: "15px" }}
+                      
                     >
                       Editar
                     </a>
@@ -133,6 +141,7 @@ export function Products() {
                     href="#"
                     className="btn btn-primary"
                     style={{ alignSelf: "center", marginBottom: "15px" }}
+                    onClick={()=> handleAddToCart(product)}
                   >
                     Add to card
                   </a>;

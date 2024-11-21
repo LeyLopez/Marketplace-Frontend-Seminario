@@ -6,6 +6,7 @@ import { RecoverPassword } from './pages/RecoverPassword'
 import { Home } from './pages/Home'
 import { ShoppingCart } from './pages/ShoppingCart'
 import { Orders } from './pages/Orders'
+import { DeleteAccount } from './pages/DeleteAccount'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/recoverpassword' element={<RecoverPassword></RecoverPassword>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/shoppingcart' element={<ShoppingCart></ShoppingCart>}></Route>
+        <Route path='/deleteaccount' element={<DeleteAccount></DeleteAccount>}></Route>
         <Route path='/orders' element={<Orders></Orders>}></Route>
 
       </Routes>

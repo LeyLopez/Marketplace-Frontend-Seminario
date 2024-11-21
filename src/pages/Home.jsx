@@ -1,4 +1,4 @@
-import { ClientNavbar } from "../components/Cliente/ClientNavar"
+import { ClientNavbar } from "../components/Cliente/ClientNavbar"
 
 
 export const Home = () => {

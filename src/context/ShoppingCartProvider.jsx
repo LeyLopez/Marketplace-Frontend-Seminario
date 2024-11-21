@@ -36,9 +36,9 @@ const comprasReducer = (state = initialState, action = {}) => {
 
 export const ShoppingCartProvider = ({ children }) => {
 
-    const [listaCompras, dispatch] = useReducer(comprasReducer, initialState);
+    const [orderItem, dispatch] = useReducer(comprasReducer, initialState);
 
-  const agregarCompra = (compra) => {
+  const addItem = (compra) => {
     compra.cantidad = 1
     const accion = {
       type: "[CARRITO] Agregar compra",
@@ -47,7 +47,7 @@ export const ShoppingCartProvider = ({ children }) => {
     dispatch(accion);
   };
 
-  const eliminarCompra = (id) => {
+  const deleteItem = (id) => {
     const accion = {
       type: "[CARRITO] eliminar compra",
       payload: id,
@@ -55,7 +55,7 @@ export const ShoppingCartProvider = ({ children }) => {
     dispatch(accion);
   };
 
-  const disminuirCantidad = (id) => {
+  const decrease = (id) => {
     const accion = {
       type: "[CARRITO] Disminuir cantidad",
       payload: id,
@@ -63,7 +63,7 @@ export const ShoppingCartProvider = ({ children }) => {
     dispatch(accion);
   };
 
-  const aumentarCantidad = (id) => {
+  const increase = (id) => {
     const accion = {
       type: "[CARRITO] Aumentar cantidad",
       payload: id,
@@ -74,11 +74,11 @@ export const ShoppingCartProvider = ({ children }) => {
   return (
     <CarritoContext.Provider
       value={{
-        listaCompras,
-        agregarCompra,
-        eliminarCompra,
-        aumentarCantidad,
-        disminuirCantidad
+        orderItem,
+        addItem,
+        deleteItem,
+        increase,
+        decrease
       }}
     >
       {children}
