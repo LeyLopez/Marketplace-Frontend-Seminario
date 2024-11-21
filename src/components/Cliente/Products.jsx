@@ -109,34 +109,34 @@ export function Products() {
               <h5 className="card-title">{`${product.name} : ${product.price}`}</h5>
               <p className="card-text">{product.description}</p>
             </div>
-            {rol && "seller"
-              ? () => {
-                  <div className="div">
-                    <a
-                      href="#"
-                      className="btn btn-primary"
-                      style={{ alignSelf: "center", marginBottom: "15px" }}
-                    >
-                      Editar
-                    </a>
-                    <a
-                      href="hola"
-                      className="btn btn-primary"
-                      style={{ alignSelf: "center", marginBottom: "15px" }}
-                    >
-                      Eliminar
-                    </a>
-                  </div>;
-                }
-              : () => {
+            {rol == "seller"
+              ? (
+                <div className="div" style={{ alignSelf: "center", marginBottom: "15px" }}>
+                  <a
+                    href="#"
+                    className="btn btn-warning"
+                    style={{ margin: "5px" }}
+                  >
+                    Editar
+                  </a>
+                  <a
+                    href="hola"
+                    className="btn btn-danger"
+                    style={{ margin: "5px" }}
+                  >
+                    Eliminar
+                  </a>
+                </div>)
+               
+              : (
                   <a
                     href="#"
                     className="btn btn-primary"
                     style={{ alignSelf: "center", marginBottom: "15px" }}
                   >
                     Add to card
-                  </a>;
-                }}
+                  </a>
+                )}
           </div>
         </div>
       ))}

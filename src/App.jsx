@@ -6,12 +6,23 @@ import { RecoverPassword } from './pages/RecoverPassword'
 import { Home } from './pages/Home'
 import { ShoppingCart } from './pages/ShoppingCart'
 import { Orders } from './pages/Orders'
+import { FormAddProduct } from './components/Seller/FormAddProduct'
+import { SellerProducts } from './components/Seller/SellerProducts'
+import { useContext } from 'react'
+import { UserContext } from './context/UserContext'
+import { ClientNavbar } from './components/Cliente/ClientNavbar'
+import { SellerNavbar } from './components/Seller/SellerNavbar'
+import { UserProvider } from './context/UserProvider'
+import { Header } from './components/Header'
 
 function App() {
 
+ 
 
   return (
-    <BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+      <Header/>
       <Routes>
       <Route path='/' element={<Login></Login>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
@@ -20,9 +31,12 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/shoppingcart' element={<ShoppingCart></ShoppingCart>}></Route>
         <Route path='/orders' element={<Orders></Orders>}></Route>
+        <Route path='/addproduct' element={<FormAddProduct/>}></Route>
+        <Route path='/productseller' element={<SellerProducts/>}></Route>
 
       </Routes>
     </BrowserRouter>
+    </UserProvider>
   )
 }
 

@@ -1,10 +1,12 @@
-import { ClientNavbar } from "../components/Cliente/ClientNavar"
+import { SellerNavbar } from "../components/Seller/SellerNavbar";
+import { SellerProducts } from "../components/Seller/SellerProducts";
 
 
 export const Home = () => {
   return (
     <>
-        <ClientNavbar></ClientNavbar>
+        <SellerNavbar/>
+        <SellerProducts/>
         
     </>
   );

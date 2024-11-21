@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { SellerNavbar } from "./Seller/SellerNavbar";
+import { ClientNavbar } from "./Cliente/ClientNavbar";
+import { UserContext } from "../context/UserContext";
 
 export const Header = () => {
+
+  const user = useContext(UserContext);
   return (
-    <div className="container">
+    <>
+    {console.log(user.user.rol)}
+      {user.user.rol===""? (<div className="container">
       <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
         <a
           href="/"
@@ -26,6 +33,7 @@ export const Header = () => {
           </NavLink>
         </div>
       </header>
-    </div>
+    </div>):(user.user.rol === "Seller" ? <SellerNavbar />: <ClientNavbar />)}
+    </>
   );
 };
