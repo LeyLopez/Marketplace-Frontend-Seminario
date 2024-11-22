@@ -18,7 +18,7 @@ export function Products() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/products');
+        const response = await axios.get('http://localhost:8088/api/products');
         setProducts(response.data);
         setLoading(false);
       } catch (err) {
