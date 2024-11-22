@@ -6,6 +6,7 @@ export function Products() {
   // Crear una lista de productos con datos en bruto
   const products = [
     {
+      id: 1,
       name: "Smartphone",
       description: "A high-end smartphone with 128GB storage",
       price: 799.99,
@@ -17,6 +18,7 @@ export function Products() {
         "https://co.tiendasishop.com/cdn/shop/files/IMG-14858881_9965d00d-ee49-4da7-82b4-ba026aaca2ba.jpg?v=1726245776&width=823",
     },
     {
+      id: 2,
       name: "Laptop",
       description: "A powerful laptop with 16GB RAM and 512GB SSD",
       price: 1200.0,
@@ -28,6 +30,7 @@ export function Products() {
         "https://co.tiendasishop.com/cdn/shop/files/IMG-14858881_9965d00d-ee49-4da7-82b4-ba026aaca2ba.jpg?v=1726245776&width=823",
     },
     {
+      id: 3,
       name: "Jacket",
       description: "A warm winter jacket",
       price: 120.5,
@@ -39,6 +42,7 @@ export function Products() {
         "https://co.tiendasishop.com/cdn/shop/files/IMG-14858881_9965d00d-ee49-4da7-82b4-ba026aaca2ba.jpg?v=1726245776&width=823",
     },
     {
+      id: 4,
       name: "T-shirt",
       description: "Cotton t-shirt in various sizes",
       price: 19.99,
@@ -50,6 +54,7 @@ export function Products() {
         "https://co.tiendasishop.com/cdn/shop/files/IMG-14858881_9965d00d-ee49-4da7-82b4-ba026aaca2ba.jpg?v=1726245776&width=823",
     },
     {
+      id: 5,
       name: "Smartphone",
       description: "A high-end smartphone with 128GB storage",
       price: 799.99,
@@ -61,6 +66,7 @@ export function Products() {
         "https://co.tiendasishop.com/cdn/shop/files/IMG-14858881_9965d00d-ee49-4da7-82b4-ba026aaca2ba.jpg?v=1726245776&width=823",
     },
     {
+      id: 6,
       name: "Laptop",
       description: "A powerful laptop with 16GB RAM and 512GB SSD",
       price: 1200.0,
@@ -72,6 +78,7 @@ export function Products() {
         "https://co.tiendasishop.com/cdn/shop/files/IMG-14858881_9965d00d-ee49-4da7-82b4-ba026aaca2ba.jpg?v=1726245776&width=823",
     },
     {
+      id: 7,
       name: "Jacket",
       description: "A warm winter jacket",
       price: 120.5,
@@ -96,7 +103,7 @@ export function Products() {
     <div className="ContainerProducts">
       {console.log(addItem)}
       {products.map((product) => (
-        <div className="divProduct">
+        <div className="divProduct" key={product.id}>
           <div
             className="card"
             style={{
@@ -104,7 +111,8 @@ export function Products() {
               height: "22rem",
               display: "flex",
               flexDirection: "column",
-            }}
+            }
+          }
           >
             <img
               src={product.image}

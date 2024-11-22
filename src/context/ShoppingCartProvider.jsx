@@ -5,7 +5,7 @@ export const ShoppingCartContext = createContext();
 
 const initialState = [];
 
-const comprasReducer = (state = initialState, action = {}) => {
+const orderReducer = (state = initialState, action = {}) => {
     switch (action.type) {
       case "[CARRITO] Agregar compra":
         return [...state, action.payload];
@@ -36,10 +36,10 @@ const comprasReducer = (state = initialState, action = {}) => {
 
 export const ShoppingCartProvider = ({ children }) => {
 
-    const [orderItem, dispatch] = useReducer(comprasReducer, initialState);
+    const [orderItem, dispatch] = useReducer(orderReducer, initialState);
 
   const addItem = (product) => {
-    compra.cantidad = 1
+    product.cantidad = 1
     const accion = {
       type: "[CARRITO] Agregar compra",
       payload: product,

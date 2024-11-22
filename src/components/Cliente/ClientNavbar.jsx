@@ -1,9 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { Badge } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../context/ShoppingCartProvider";
+
 
 
 export const ClientNavbar = () => {
+  const {orderItem} = useContext(ShoppingCartContext);
 
   const navigate = useNavigate();
 
@@ -14,6 +18,7 @@ export const ClientNavbar = () => {
   const onDeleteAccount = () => {
     navigate('/deleteaccount');
   }
+
 
 
 
@@ -34,7 +39,7 @@ export const ClientNavbar = () => {
               />
             </form>
             <NavLink to="/shoppingcart" className="nav-link px-2">
-              <Badge badgeContent={4} color="primary">
+              <Badge badgeContent={orderItem.length} color="primary">
                 <ShoppingCart color="action" />
               </Badge>
             </NavLink>

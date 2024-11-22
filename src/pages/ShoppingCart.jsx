@@ -3,30 +3,40 @@ import { ClientNavbar } from "../components/Cliente/ClientNavbar";
 import { ShoppingCartContext } from "../context/ShoppingCartProvider";
 
 export const ShoppingCart = () => {
-  const itemOrder = [
-    {
-      id: 1,
-      img: "https://via.placeholder.com/150",
-      nombre: "Producto 1",
-      descripcion: "Descripción del producto 1",
-      precio: 100,
-      cantidad: 2,
-    },
-    {
-      id: 2,
-      img: "https://via.placeholder.com/150",
-      nombre: "Producto 2",
-      descripcion: "Descripción del producto 2",
-      precio: 200,
-      cantidad: 3,
-    },
-  ];
+  // const itemOrder = [
+  //   {
+  //     id: 1,
+  //     img: "https://via.placeholder.com/150",
+  //     nombre: "Producto 1",
+  //     descripcion: "Descripción del producto 1",
+  //     precio: 100,
+  //     cantidad: 1,
+  //   },
+  //   {
+  //     id: 2,
+  //     img: "https://via.placeholder.com/150",
+  //     nombre: "Producto 2",
+  //     descripcion: "Descripción del producto 2",
+  //     precio: 200,
+  //     cantidad: 1,
+  //   },
+  //   {
+  //     id: 3,
+  //     img: "https://via.placeholder.com/150",
+  //     nombre: "Producto 3",
+  //     descripcion: "Descripción del producto 3",
+  //     precio: 300,
+  //     cantidad: 1,
+  //   },
 
-  const { deleteItem } = useContext(ShoppingCartContext);
+  // ];
 
-  const deleteProductToCart = (id) => {
-    deleteItem(id);
-  };
+  const calcularTotal = () => {
+    return orderItem.reduce((total, item)=> total+item.price*item.cantidad, 0).toFixed(2)
+ }
+
+  const { orderItem, deleteItem, increase, decrease } =
+    useContext(ShoppingCartContext);
 
   return (
     <>
@@ -46,23 +56,31 @@ export const ShoppingCart = () => {
             </tr>
           </thead>
           <tbody>
-            {itemOrder.map((item) => (
+            {orderItem.map((item) => (
               <tr key={item.id}>
                 <td>
                   <img
                     src={item.img}
-                    alt={item.nombre}
+                    alt={item.name}
                     style={{ width: "50px" }}
                   />
                 </td>
-                <td>{item.nombre}</td>
-                <td>{item.descripcion}</td>
-                <td>{item.precio}</td>
-                <td>{item.cantidad}</td>
+                <td>{item.name}</td>
+                <td>{item.description}</td>
+                <td>{item.price}</td>
+                <td>
+                  <button className="btn" onClick={() => decrease(item.id)}>
+                    -
+                  </button>
+                  <button className="btn">{item.cantidad}</button>
+                  <button className="btn" onClick={() => increase(item.id)}>
+                    +
+                  </button>
+                </td>
                 <td>
                   <button
                     className="btn btn-danger"
-                    onClick={() => deleteProductToCart(item.id)}
+                    onClick={() => deleteItem(item.id)}
                   >
                     Eliminar
                   </button>
@@ -71,20 +89,21 @@ export const ShoppingCart = () => {
             ))}
           </tbody>
 
-          {/* <th>
+          <th>
+            
           <b>Total</b>
         </th>
         <td></td>
         <td></td>
-        <td>${calcularTotal()}</td> */}
+        <td>${calcularTotal()}</td>
         </table>
-
+            <br /><br />
         <div className="container">
           <div className="d-flex justify-content-center pt-5">
             <button
               className="btn btn-primary w-40 py-2"
               // onClick={handleImpresion}
-              // disabled={listaCompras < 1}
+               disabled={orderItem < 1}
             >
               Comprar
             </button>
