@@ -1,0 +1,8 @@
+CLIENTE:
+"email": "carlos.gomez@example.com",
+        "password": "password123",
+
+
+VENDEDOR: 
+        "email": "maria.lopez@example.com",
+        "password": "password123",

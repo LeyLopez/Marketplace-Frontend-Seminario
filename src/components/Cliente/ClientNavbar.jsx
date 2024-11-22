@@ -1,13 +1,14 @@
+import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Badge } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
-import { useContext } from "react";
 import { ShoppingCartContext } from "../../context/ShoppingCartProvider";
-
+import { NavbarContext } from "../../context/NavbarProvider";
 
 
 export const ClientNavbar = () => {
-  const {orderItem} = useContext(ShoppingCartContext);
+  const { orderItem } = useContext(ShoppingCartContext);
+  const { setRol } = useContext(NavbarContext);
 
   const navigate = useNavigate();
 
@@ -19,6 +20,11 @@ export const ClientNavbar = () => {
     navigate('/deleteaccount');
   }
 
+  const handleLogout = () => {
+    localStorage.clear();
+    setRol("");
+    navigate("/login");
+  };
 
   return (
     <div>
@@ -83,8 +89,7 @@ export const ClientNavbar = () => {
             <div className="dropdown text-end">
               <button
                 className="btn btn-outline-danger"
-                onClick={() => navigate("/login")}
-                // onClick={() => setNavbarType("public")}
+                onClick={handleLogout}
               >
                 Cerrar Sesión
               </button>
@@ -95,3 +100,4 @@ export const ClientNavbar = () => {
     </div>
   );
 };
+

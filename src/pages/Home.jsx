@@ -1,4 +1,3 @@
-import { SellerNavbar } from "../components/Seller/SellerNavbar";
 import { SellerProducts } from "../components/Seller/SellerProducts";
 
 

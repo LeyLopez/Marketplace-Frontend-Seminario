@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
-import { Header } from "../components/Header";
+import axios from "axios";
 
 export const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
-  //const { setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -17,30 +17,31 @@ export const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //   setError("");
-    //   setSuccessMessage("");
+    setError("");
+    setSuccessMessage("");
 
-    //   try {
-    //     const response = await axios.get("http://localhost:8080/api/users");
-    //     const users = response.data;
+    try {
+      const response = await axios.get("http://localhost:8080/api/users");
+      const users = response.data;
 
-    //     // Validar email y contraseña
-    //     const user = users.find(
-    //         (u) => u.email === formData.email && u.password === formData.password
-    //     );
+      // Validar email y contraseña
+      const user = users.find(
+        (u) => u.email === formData.email && u.password === formData.password
+      );
 
-    //     if (user) {
-    //       setSuccessMessage("Inicio de sesión exitoso. Redirigiendo...");
-    //       setTimeout(() => {
-    navigate("/home");
-    //       }, 1500);
-    //     } else {
-    //       setError("Email o contraseña incorrectos.");
-    //     }
-    //   } catch (err) {
-    //     console.error("Error durante la conexión:", err);
-    //     setError("Error de conexión al servidor. Intente más tarde.");
-    //   }
+      if (user) {
+        setUser(user);
+        setSuccessMessage("Inicio de sesión exitoso. Redirigiendo...");
+        setTimeout(() => {
+          navigate("/home");
+        }, 1500);
+      } else {
+        setError("Email o contraseña incorrectos.");
+      }
+    } catch (err) {
+      console.error("Error durante la conexión:", err);
+      setError("Error de conexión al servidor. Intente más tarde.");
+    }
   };
 
   return (

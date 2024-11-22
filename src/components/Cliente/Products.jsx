@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import "../../assets/css/styles.css";
 import { ShoppingCartContext} from "../../context/ShoppingCartProvider";
+import { UserContext } from "../../context/UserContext";
 
 export function Products() {
   // Crear una lista de productos con datos en bruto
@@ -91,9 +92,9 @@ export function Products() {
     },
   ];
 
-  const [rol, setRol] = useState("Seller");
 
   const { addItem } = useContext(ShoppingCartContext);
+  const {user} = useContext(UserContext);
 
   const handleAddToCart = (product) => {
     addItem(product);
@@ -126,7 +127,7 @@ export function Products() {
               <h5 className="card-title">{`${product.name} : ${product.price}`}</h5>
               <p className="card-text">{product.description}</p>
             </div>
-            {rol == "CLIENTE"
+            {user.rol == "VENDEDOR"
               ? (
                 <div className="div" style={{ alignSelf: "center", marginBottom: "15px" }}>
                   <a

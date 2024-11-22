@@ -1,10 +1,8 @@
 import React from "react";
-import { Header } from "../components/Header";
 
 export const Signup = () => {
   return (
     <>
-      <Header></Header>
       <div className="d-flex justify-content-center pt-5">
         <div className="col-md-3 ">
           <h1 className="h3 mb-3 fw-normal">Registro</h1>
