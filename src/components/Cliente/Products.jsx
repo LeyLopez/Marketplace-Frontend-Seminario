@@ -166,7 +166,7 @@ export function Products() {
               <strong>Precio:</strong> ${selectedProduct.price}
             </p>
             <p>
-              <strong>Vendedor:</strong> ${selectedProduct.salesman.name}
+              <strong>Vendedor:</strong> ${selectedProduct.salesman.namegit}
             </p>
             <button
               className="btn btn-primary"
