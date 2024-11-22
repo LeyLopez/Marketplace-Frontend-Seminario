@@ -12,6 +12,7 @@ import { SellerProducts } from "./components/Seller/SellerProducts";
 import { UserProvider } from "./context/UserProvider";
 import { Header } from "./components/Header";
 import { ShoppingCartProvider } from "./context/ShoppingCartProvider";
+import { Review } from "./pages/Review";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="/orders" element={<Orders></Orders>}></Route>
             <Route path="/addproduct" element={<FormAddProduct />}></Route>
             <Route path="/productseller" element={<SellerProducts />}></Route>
+            <Route path="/makereview" element={<Review></Review>}></Route>
           </Routes>
         </BrowserRouter>
       </ShoppingCartProvider>

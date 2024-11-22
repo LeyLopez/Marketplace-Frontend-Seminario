@@ -28,13 +28,13 @@ export function FormAddProduct() {
 
   return (
     <>
-      <SellerNavbar />
       <div
         className="container  mt-5"
         style={{ width: "50%" }}
       >
         <div className="w-100">
-          <h2>Formulario de Producto</h2>
+          <h2>Agregar producto</h2>
+          <br />
           <form onSubmit={handleSubmit} id="formAddProduct">
             <div className="mb-3">
               <label htmlFor="name" className="form-label">

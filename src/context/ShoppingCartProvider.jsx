@@ -8,11 +8,21 @@ const initialState = [];
 const orderReducer = (state = initialState, action = {}) => {
     switch (action.type) {
       case "[CARRITO] Agregar compra":
+        const existingItem = state.find(item => item.id === action.payload.id);
+        if (existingItem) {
+          return state.map(item =>
+            item.id === action.payload.id
+              ? { ...item, cantidad: item.cantidad + 1 }
+              : item
+        );
+      }
         return [...state, action.payload];
+      
       case "[CARRITO] eliminar compra":
         return state.filter((compra) => compra.id !== action.payload);
 
       case "[CARRITO] Disminuir cantidad":
+        
         return state.map((item)=>{
             const cant = item.cantidad-1
             if(item.id === action.payload && item.cantidad > 1){

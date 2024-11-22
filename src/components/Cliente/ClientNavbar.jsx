@@ -20,8 +20,6 @@ export const ClientNavbar = () => {
   }
 
 
-
-
   return (
     <div>
       <div className="px-3 py-2 text-bg-dark border-bottom">
