@@ -21,7 +21,7 @@ export const Login = () => {
     setSuccessMessage("");
 
     try {
-      const response = await axios.get("http://localhost:8080/api/users");
+      const response = await axios.get("http://localhost:8088/api/users");
       const users = response.data;
 
       // Validar email y contraseña
