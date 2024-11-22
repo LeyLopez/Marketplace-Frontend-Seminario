@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
 
 export const ShoppingCartContext = createContext();
 
@@ -38,11 +38,11 @@ export const ShoppingCartProvider = ({ children }) => {
 
     const [orderItem, dispatch] = useReducer(comprasReducer, initialState);
 
-  const addItem = (compra) => {
+  const addItem = (product) => {
     compra.cantidad = 1
     const accion = {
       type: "[CARRITO] Agregar compra",
-      payload: compra,
+      payload: product,
     };
     dispatch(accion);
   };
@@ -72,7 +72,7 @@ export const ShoppingCartProvider = ({ children }) => {
   };
 
   return (
-    <CarritoContext.Provider
+    <ShoppingCartContext.Provider
       value={{
         orderItem,
         addItem,
@@ -82,7 +82,7 @@ export const ShoppingCartProvider = ({ children }) => {
       }}
     >
       {children}
-    </CarritoContext.Provider>
+    </ShoppingCartContext.Provider>
   );
 
 }

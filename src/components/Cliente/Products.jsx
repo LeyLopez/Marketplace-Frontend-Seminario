@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import "../../assets/css/styles.css";
-import { ShoppingCartContext, ShoppingCartProvider } from "../../context/ShoppingCartProvider";
+import { ShoppingCartContext} from "../../context/ShoppingCartProvider";
+
 export function Products() {
   // Crear una lista de productos con datos en bruto
   const products = [
@@ -83,16 +84,17 @@ export function Products() {
     },
   ];
 
-  const [rol, setRol] = useState("seller");
+  const [rol, setRol] = useState("Seller");
 
-  const {addProdcut} = useContext(ShoppingCartContext);
+  const { addItem } = useContext(ShoppingCartContext);
 
   const handleAddToCart = (product) => {
-    addProdcut(product);
+    addItem(product);
   }
 
   return (
     <div className="ContainerProducts">
+      {console.log(addItem)}
       {products.map((product) => (
         <div className="divProduct">
           <div
@@ -116,28 +118,7 @@ export function Products() {
               <h5 className="card-title">{`${product.name} : ${product.price}`}</h5>
               <p className="card-text">{product.description}</p>
             </div>
-            {rol && "seller"
-              ? () => {
-                  <div className="div">
-                    <a
-                      href="#"
-                      className="btn btn-primary"
-                      style={{ alignSelf: "center", marginBottom: "15px" }}
-                      
-                    >
-                      Editar
-                    </a>
-                    <a
-                      href="hola"
-                      className="btn btn-primary"
-                      style={{ alignSelf: "center", marginBottom: "15px" }}
-                    >
-                      Eliminar
-                    </a>
-                  </div>;
-                }
-              : () => 
-            {rol == "seller"
+            {rol == "CLIENTE"
               ? (
                 <div className="div" style={{ alignSelf: "center", marginBottom: "15px" }}>
                   <a
@@ -148,7 +129,7 @@ export function Products() {
                     Editar
                   </a>
                   <a
-                    href="hola"
+                    href="deleteproduct"
                     className="btn btn-danger"
                     style={{ margin: "5px" }}
                   >
@@ -166,7 +147,7 @@ export function Products() {
                   >
                     Add to card
                   </a>
-                )}}
+                )}
           </div>
         </div>
       ))}

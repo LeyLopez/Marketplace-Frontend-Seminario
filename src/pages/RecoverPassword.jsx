@@ -9,7 +9,6 @@ export const RecoverPassword = () => {
 
   return (
     <>
-      <ClientNavbar></ClientNavbar>
       <div className="d-flex justify-content-center pt-5">
           <div className="col-md-3">
             <form onSubmit={handleSubmit}>

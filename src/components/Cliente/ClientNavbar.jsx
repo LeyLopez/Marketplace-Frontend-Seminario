@@ -80,6 +80,7 @@ export const ClientNavbar = () => {
             <div className="dropdown text-end">
               <button
                 className="btn btn-outline-danger"
+                onClick={() => navigate("/login")}
                 // onClick={() => setNavbarType("public")}
               >
                 Cerrar Sesión

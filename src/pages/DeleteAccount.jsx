@@ -4,7 +4,6 @@ import { ClientNavbar } from "../components/Cliente/ClientNavbar";
 export const DeleteAccount = () => {
   return (
     <>
-    <ClientNavbar></ClientNavbar>
     <div class name="modal">
       <div className="d-flex justify-content-center pt-5 ">
         <div className="col-md-3 border border-primary-5 padding padding-6">

@@ -54,7 +54,7 @@ export const SellerNavbar = () => {
           <div className="dropdown text-end">
             <button
               className="btn btn-outline-danger"
-              onClick={() => setNavbarType("public")}
+              onClick={() => setNavbarType("public") &&  navigate("/login")}
             >
               Cerrar Sesión
             </button>

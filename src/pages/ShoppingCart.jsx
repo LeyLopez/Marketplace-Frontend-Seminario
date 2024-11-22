@@ -24,14 +24,12 @@ export const ShoppingCart = () => {
 
   const { deleteItem } = useContext(ShoppingCartContext);
 
-
-  const deleteProductToCart = (id)=>{
+  const deleteProductToCart = (id) => {
     deleteItem(id);
-  }
+  };
 
   return (
     <>
-      <ClientNavbar></ClientNavbar>
       <div className="container">
         <h1 className="text-center mt-5">Carrito de compras</h1>
         <br />
@@ -48,19 +46,29 @@ export const ShoppingCart = () => {
             </tr>
           </thead>
           <tbody>
-            {itemOrder.map((item) => {
-                <tr key={item.id}>
-                  <td>{item.img}</td>
-                  <td>{item.nombre}</td>
-                  <td>{item.descripcion}</td>
-                  <td>{item.precio}</td>
-                  <td>{item.cantidad}</td>
-                  <td>
-                    <button className="btn btn-danger"
-                    onClick={()=>deleteProductToCart(item.id)}>Eliminar</button>
-                  </td>
-                </tr>
-            })}
+            {itemOrder.map((item) => (
+              <tr key={item.id}>
+                <td>
+                  <img
+                    src={item.img}
+                    alt={item.nombre}
+                    style={{ width: "50px" }}
+                  />
+                </td>
+                <td>{item.nombre}</td>
+                <td>{item.descripcion}</td>
+                <td>{item.precio}</td>
+                <td>{item.cantidad}</td>
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => deleteProductToCart(item.id)}
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
 
           {/* <th>
